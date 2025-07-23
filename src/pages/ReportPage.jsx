@@ -4,10 +4,14 @@ function ReportPage() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    const storedUsers = localStorage.getItem('user_data');
-    if (storedUsers) {
-      setUsers(JSON.parse(storedUsers));
-    }
+    const interval = setInterval(() => {
+      const storedUsers = localStorage.getItem('user_data');
+      if (storedUsers) {
+        setUsers(JSON.parse(storedUsers));
+      }
+    }, 1000); //fetches every second to refresh the report page
+
+    return () => clearInterval(interval);
   }, []);
 
   return (
