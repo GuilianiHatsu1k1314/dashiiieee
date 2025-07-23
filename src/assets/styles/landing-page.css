@@ -18,11 +18,17 @@
 .cta-section {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
     background-color: blanchedalmond;
+    padding-left: 4rem;
+    padding-right: 2rem;
 }
 
+.cta-section h1 {
+    margin-top: 13rem;
+    font-size: 3.2rem;
+}
 .img-section {
    background-color: burlywood;
 }
