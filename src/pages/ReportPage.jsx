@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function ReportPage() {
   const [users, setUsers] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -16,6 +18,7 @@ function ReportPage() {
 
   return (
     <div>
+      <button onClick={() => navigate('/dashboard')} style={{ marginBottom: '10px' }}>Back to Dashboard?</button>
       <h2>📋 User Report</h2>
       {users.length === 0 ? (
         <p>No users available.</p>
