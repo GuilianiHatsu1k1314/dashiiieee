@@ -34,7 +34,10 @@ function LoginPage({ onLogin }) {
         onChange={e => setUsername(e.target.value)}
       />
       <br /><br />
-      <Button onClick={handleLogin}>Login</Button></div>
+      <Button onClick={() => navigate('/dashboard')} className='login-button'>
+        Login
+      </Button>
+      </div>
     </div>
   );
 }
