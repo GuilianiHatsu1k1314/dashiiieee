@@ -10,18 +10,19 @@
     width: 100%;
 }
 
+.cta-section ,
+.img-section {
+    height: 100%;
+    width: 50%;
+}
 .cta-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 50%;
+    align-items: flex-start;
     background-color: blanchedalmond;
 }
 
 .img-section {
-   height: 100%;
-   width: 50%;
    background-color: burlywood;
 }
