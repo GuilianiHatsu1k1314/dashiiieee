@@ -12,7 +12,7 @@ function LandingPage() {
       <section className='hero-section'>
         <div className='cta-section'>
           <h1>📦 Welcome to Dashiiieee</h1>
-          <p>We Deliver to your next door step.</p>
+          <p>  We Deliver to your next door step. Experience fast, reliable, and convenient delivery services tailored to your needs.</p>
           <Button onClick={() => navigate('/login')} className='get-started-button'>
             Get Started
           </Button>
