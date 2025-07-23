@@ -15,7 +15,7 @@ function App() {
         <h1 style={{ margin: 0, padding: '10px' }}>📦 Dashiiieee App</h1>
       </header>
 
-      <main style={{ padding: '20px' }}>
+      <main>
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<LoginPage onLogin={setUser} />} />
