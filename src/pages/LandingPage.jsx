@@ -11,14 +11,14 @@ function LandingPage() {
     <div className='landing-page-wrapper'>
       <section className='hero-section'>
         <div className='cta-section'>
-          <h1>📦 Welcome to Dashiiieee App</h1>
+          <h1>📦 Welcome to Dashiiieee</h1>
           <p>We Deliver to your next door step.</p>
           <Button onClick={() => navigate('/login')} className='get-started-button'>
             Get Started
           </Button>
         </div>
         <div className='img-section'>
-
+          <img src=''/>
         </div>
       </section>
     </div>

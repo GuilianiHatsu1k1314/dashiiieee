@@ -1,7 +1,10 @@
 .get-started-button {
-    font-size: 50px;
-    padding: 2.5rem;
-    background-color: aqua;
+    font-size: 1.4rem;
+    padding: 1rem 2.5rem;
+    background-color: rgba(237, 163, 2, 0.753);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
 .login-button {
