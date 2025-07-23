@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function ApiDemo() {
   const [users, setUsers] = useState([]);
@@ -11,6 +12,7 @@ function ApiDemo() {
   //json server api url
   //for the crud to reflect changes, created a mock database, cruddb.json
   const API_URL = 'http://localhost:3001/users';
+  const navigate = useNavigate();
   
 
   // ---------- GET: Fetch all users ----------
@@ -34,21 +36,10 @@ function ApiDemo() {
   // ---------- POST: Add new user ----------
   const addUser = async () => {
     try {
-      //if empty, throws the error to the catch then pop up an alert.
-      if (!newUserName) throw new Error ('Name cannot be empty');
-      //res is never read since the placeholder API doesn't save.
       const res = await axios.post(API_URL, { name: newUserName });
-      //so that it always follow the id count, no random ones.
-      const newId = users.length + 1;
-      //create new user object for it to be saved.
-      const newUser = {
-        id: newId,
-        name: newUserName
-      };
-      //still calling axios
-      setUsers(prev => [...prev, newUser]);
+      setUsers(prev => [...prev, res.data]);
       setNewUserName('');
-    } catch (a) {
+    } catch {
       alert('Failed to add user.');
     }
   };
@@ -79,7 +70,10 @@ function ApiDemo() {
 
   // ---------- Render ----------
   return (
+    
     <div style={{ padding: '20px' }}>
+      {/*Button to navigate to dashboard*/}
+       <button onClick={() => navigate('/dashboard')} style={{ marginBottom: '10px' }}>Back to Dashboard?</button>
       <h1>API Integration Demo (with Axios)</h1>
 
       {/* Add user form */}
