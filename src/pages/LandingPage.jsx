@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '../components/Button';
 import '../assets/styles/button.css';
+import '../assets/styles/landing-page.css';
 
 function LandingPage() {
   const navigate = useNavigate();
