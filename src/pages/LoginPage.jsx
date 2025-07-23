@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Button from '../components/Button';
 import '../assets/styles/login-page.css';
 
 function LoginPage({ onLogin }) {
@@ -15,8 +16,9 @@ function LoginPage({ onLogin }) {
 
   return (
     <div class="login-wrapper">
-      <h2>SIGN IN</h2>
+      
       <div class="login-container">
+        <h2>SIGN IN</h2>
         <label>Email Address</label>
         <input
         type="text"
@@ -32,7 +34,7 @@ function LoginPage({ onLogin }) {
         onChange={e => setUsername(e.target.value)}
       />
       <br /><br />
-      <button onClick={handleLogin}>Login</button></div>
+      <Button onClick={handleLogin}>Login</Button></div>
     </div>
   );
 }
