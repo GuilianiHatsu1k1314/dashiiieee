@@ -9,7 +9,7 @@ function LandingPage() {
   return (
     <div>
       <h1>📦 Welcome to Dashiiieee App</h1>
-      <p>This app features a login system, dashboard with CRUD, and reporting functionality.</p>
+      <p>We Deliver to your next door step.</p>
       <Button onClick={() => navigate('/login')} className='get-started-button'>
         Get Started
       </Button>
