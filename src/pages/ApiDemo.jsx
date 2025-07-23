@@ -1,126 +1,112 @@
 import React, { useEffect, useState } from 'react';
-
-const API_URL = 'https://jsonplaceholder.typicode.com/users';
-const STORAGE_KEY = 'user_data';
+import axios from 'axios';
 
 function ApiDemo() {
   const [users, setUsers] = useState([]);
-  const [newUserName, setNewUserName] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [newUserName, setNewUserName] = useState('');
 
-  // Load from localStorage or API
+  //installed a server
+  //json server api url
+  //for the crud to reflect changes, created a mock database, cruddb.json
+  const API_URL = 'http://localhost:3001/users';
+  
+
+  // ---------- GET: Fetch all users ----------
   useEffect(() => {
-    const storedUsers = localStorage.getItem(STORAGE_KEY);
-    if (storedUsers) {
-      setUsers(JSON.parse(storedUsers));
-    } else {
-      fetchUsersFromAPI();
-    }
+    fetchUsers();
   }, []);
 
-  const fetchUsersFromAPI = async () => {
+  const fetchUsers = async () => {
     setLoading(true);
+    setError(null);
     try {
-      const res = await fetch(API_URL);
-      const data = await res.json();
-      setUsers(data);
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+      const res = await axios.get(API_URL);
+      setUsers(res.data);
     } catch (err) {
-      setError('Failed to fetch users');
+      setError(err.message || 'Failed to fetch users');
     } finally {
       setLoading(false);
     }
   };
 
-  const updateLocalStorage = (updatedUsers) => {
-    setUsers(updatedUsers);
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedUsers));
-  };
-
+  // ---------- POST: Add new user ----------
   const addUser = async () => {
-    if (!newUserName.trim()) return alert('Enter a name');
     try {
-      const res = await fetch(API_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name: newUserName }),
-      });
-      const newUser = await res.json();
-      const updatedUsers = [...users, newUser];
-      updateLocalStorage(updatedUsers);
+      //if empty, throws the error to the catch then pop up an alert.
+      if (!newUserName) throw new Error ('Name cannot be empty');
+      //res is never read since the placeholder API doesn't save.
+      const res = await axios.post(API_URL, { name: newUserName });
+      //so that it always follow the id count, no random ones.
+      const newId = users.length + 1;
+      //create new user object for it to be saved.
+      const newUser = {
+        id: newId,
+        name: newUserName
+      };
+      //still calling axios
+      setUsers(prev => [...prev, newUser]);
       setNewUserName('');
-    } catch {
+    } catch (a) {
       alert('Failed to add user.');
     }
   };
 
+  // ---------- PUT: Update user name ----------
   const updateUser = async (id) => {
-    const newName = prompt('Enter new name:');
-    if (!newName) return;
+    const updatedName = prompt('Enter new name:');
+    if (!updatedName) return;
     try {
-      const res = await fetch(`${API_URL}/${id}`, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name: newName }),
-      });
-      const updated = await res.json();
-      const updatedUsers = users.map(user =>
-        user.id === id ? { ...user, name: updated.name } : user
+      const res = await axios.put(`${API_URL}/${id}`, { name: updatedName });
+      setUsers(prev =>
+        prev.map(user => (user.id === id ? { ...user, name: res.data.name } : user))
       );
-      updateLocalStorage(updatedUsers);
     } catch {
       alert('Failed to update user.');
     }
   };
 
+  // ---------- DELETE: Remove user ----------
   const deleteUser = async (id) => {
     try {
-      await fetch(`${API_URL}/${id}`, { method: 'DELETE' });
-      const updatedUsers = users.filter(user => user.id !== id);
-      updateLocalStorage(updatedUsers);
+      await axios.delete(`${API_URL}/${id}`);
+      setUsers(prev => prev.filter(user => user.id !== id));
     } catch {
       alert('Failed to delete user.');
     }
   };
 
+  // ---------- Render ----------
   return (
-    <div>
-      <h2>🛠 CRUD Page</h2>
+    <div style={{ padding: '20px' }}>
+      <h1>API Integration Demo (with Axios)</h1>
 
-      <div style={{ marginBottom: '20px' }}>
+      {/* Add user form */}
+      <div style={{ marginBottom: '10px' }}>
         <input
           type="text"
           value={newUserName}
-          onChange={e => setNewUserName(e.target.value)}
           placeholder="New user name"
-          style={{ padding: '8px', width: '250px', marginRight: '10px' }}
+          onChange={e => setNewUserName(e.target.value)}
         />
-        <button onClick={addUser}>➕ Add User</button>
+        <button onClick={addUser}>Add User</button>
       </div>
 
-      {loading && <p>Loading...</p>}
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+      {/* Loading/Error states */}
+      {loading && <p>Loading users...</p>}
+      {error && <p style={{ color: 'red' }}>Error: {error}</p>}
 
-      <table border="1" cellPadding="10" cellSpacing="0" style={{ width: '100%' }}>
-        <thead>
-          <tr>
-            <th>ID</th><th>Name</th><th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {users.map(user =>
-            <tr key={user.id}>
-              <td>{user.id}</td>
-              <td>{user.name}</td>
-              <td>
-                <button onClick={() => updateUser(user.id)}>✏️ Edit</button>{' '}
-                <button onClick={() => deleteUser(user.id)}>🗑️ Delete</button>
-              </td>
-            </tr>
-          )}
-        </tbody>
-      </table>
+      {/* List of users */}
+      <ul>
+        {users.map(user => (
+          <li key={user.id}>
+            <strong>[{user.id}]</strong> {user.name}{' '}
+            <button onClick={() => updateUser(user.id)}>Edit</button>{' '}
+            <button onClick={() => deleteUser(user.id)}>Delete</button>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
