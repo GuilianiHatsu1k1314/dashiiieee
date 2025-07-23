@@ -17,9 +17,11 @@
     align-items: center;
     height: 100%;
     width: 50%;
+    background-color: blanchedalmond;
 }
 
 .img-section {
    height: 100%;
    width: 50%;
+   background-color: burlywood;
 }
