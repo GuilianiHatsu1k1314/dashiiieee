@@ -3,5 +3,19 @@
 }
 
 .hero-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100%;
+    width: 100%;
+}
+
+.cta-section {
+    height: 100%;
+    width: 50%;
+}
+
+.img-section {
+   height: 100%;
+   width: 50%;
 }
