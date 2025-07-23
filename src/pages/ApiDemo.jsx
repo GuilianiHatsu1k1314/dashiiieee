@@ -36,10 +36,15 @@ function ApiDemo() {
   // ---------- POST: Add new user ----------
   const addUser = async () => {
     try {
+      //No inputs = error: Failed to add user.
+      if (!newUserName) throw new Error('Name cannot be empty');
+      //adds new user, then saves the updated list to the localStorage.
       const res = await axios.post(API_URL, { name: newUserName });
-      setUsers(prev => [...prev, res.data]);
+      const newUsers = [...users, res.data];
+      localStorage.setItem('user_data', JSON.stringify(newUsers));
+      setUsers(newUsers);
       setNewUserName('');
-    } catch {
+    } catch (a) {
       alert('Failed to add user.');
     }
   };
@@ -49,10 +54,15 @@ function ApiDemo() {
     const updatedName = prompt('Enter new name:');
     if (!updatedName) return;
     try {
+      //edits / updates name, then saves the updated list to the localStorage.
       const res = await axios.put(`${API_URL}/${id}`, { name: updatedName });
-      setUsers(prev =>
-        prev.map(user => (user.id === id ? { ...user, name: res.data.name } : user))
+      setUsers(prev => {
+      const updatedUsers = prev.map(user =>
+        user.id === id ? { ...user, name: res.data.name } : user
       );
+      localStorage.setItem('user_data', JSON.stringify(updatedUsers));
+      return updatedUsers;
+    });
     } catch {
       alert('Failed to update user.');
     }
@@ -61,8 +71,11 @@ function ApiDemo() {
   // ---------- DELETE: Remove user ----------
   const deleteUser = async (id) => {
     try {
+      //remove deleted user from users, then saves the updated list to the localStorage.
       await axios.delete(`${API_URL}/${id}`);
-      setUsers(prev => prev.filter(user => user.id !== id));
+      const updatedUsers = users.filter(user => user.id !== id);
+      setUsers(updatedUsers);
+      localStorage.setItem('user_data', JSON.stringify(updatedUsers));
     } catch {
       alert('Failed to delete user.');
     }
