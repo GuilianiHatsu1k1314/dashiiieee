@@ -16,7 +16,8 @@ function LoginPage({ onLogin }) {
   return (
     <div class="container">
       <h2>SIGN IN</h2>
-      <input
+      <div><
+        input
         type="text"
         placeholder="Enter username"
         value={username}
@@ -29,7 +30,7 @@ function LoginPage({ onLogin }) {
         onChange={e => setUsername(e.target.value)}
       />
       <br /><br />
-      <button onClick={handleLogin}>Login</button>
+      <button onClick={handleLogin}>Login</button></div>
     </div>
   );
 }
