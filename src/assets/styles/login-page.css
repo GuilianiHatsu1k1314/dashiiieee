@@ -24,3 +24,11 @@ label{
     margin-top: 12px;
     color: rgb(118, 118, 118);
 }
+input{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid rgb(177, 177, 177);
+    border-radius: 4px;
+}
