@@ -14,7 +14,7 @@ function LandingPage() {
           <h1>📦 Your package is delivered fast to your doorstep</h1>
           <p>  We Deliver to your next door step. Experience fast, reliable, and convenient delivery services tailored to your needs.</p>
           <Button onClick={() => navigate('/login')} className='get-started-button'>
-            Get Started
+            <b>Get Started</b>
           </Button>
         </div>
         <div className='img-section'>
