@@ -10,5 +10,8 @@
 .login-button {
     font-size: 20px;
     padding: 5px;
-    background-color: aqua;
+    background-color: rgba(237, 163, 2, 0.753);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
 }
