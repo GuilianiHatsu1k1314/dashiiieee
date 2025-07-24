@@ -14,9 +14,9 @@
     text-align: center;
     display: flex;
     flex-direction: column;
-    height: 350px;
-    width: 250px;
-    padding: 20px;
+    height: 500px;
+    width: 500px;
+    padding: 30px;
     
 }
 label{

@@ -8,6 +8,7 @@
 }
 
 .login-button {
+    width: 200px;
     font-size: 20px;
     padding: 5px;
     background-color: rgba(237, 163, 2, 0.753);
