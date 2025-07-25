@@ -1,5 +1,6 @@
 header {
     display: flex;
+    position: fixed;
     justify-content: space-between;
     padding: 0.3rem 2rem 0.3rem 2rem;
     width: 100%;
