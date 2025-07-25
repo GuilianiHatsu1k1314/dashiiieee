@@ -12,6 +12,7 @@
 
 .cta-section ,
 .img-section {
+    background-color: blanchedalmond;
     height: 100%;
     width: 50%;
 }
@@ -20,7 +21,6 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    background-color: blanchedalmond;
     padding-left: 4rem;
     padding-right: 2rem;
     gap: 2.3rem;
