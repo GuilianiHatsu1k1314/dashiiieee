@@ -5,10 +5,11 @@ import '../assets/styles/login-page.css';
 
 function LoginPage({ onLogin }) {
   const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
   const handleLogin = () => {
-    if (username.trim()) {
+    if (username.trim() && password.trim()) {
       onLogin(username); 
       navigate('/dashboard');
     }
@@ -30,11 +31,11 @@ function LoginPage({ onLogin }) {
       <input
         type="text"
         placeholder="type your password"
-        value={username}
-        onChange={e => setUsername(e.target.value)}
+        value={password}
+        onChange={e => setPassword(e.target.value)}
       />
       <br /><br />
-      <Button onClick={() => navigate('/dashboard')} className='login-button'>
+      <Button onClick={handleLogin} className="login-button">
         Login
       </Button>
       </div>
