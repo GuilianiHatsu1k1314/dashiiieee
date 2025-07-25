@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate, useLocation} from 'react-router-dom';
 import LoginPage from './pages/LoginPage';
 import LandingPage from './pages/LandingPage';
 import Dashboard from './pages/Dashboard';
@@ -9,10 +9,12 @@ import Header from './components/Header';
 
 function App() {
   const [user, setUser] = useState(null); // user = string (username)
+  const location = useLocation();
+  const showHeader = location.pathname === '/';
 
   return (
-    <Router>
-      <Header />
+    <>
+      {showHeader && <Header />}
       <main>
         <Routes>
           <Route path="/" element={<LandingPage />} />
@@ -23,8 +25,7 @@ function App() {
           </Route>
         </Routes>
       </main>
-
-    </Router>
+    </>
   );
 }
 
