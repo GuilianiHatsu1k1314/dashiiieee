@@ -36,12 +36,11 @@
     overflow: hidden;
 }
 
-.img-section img {
+.img-section > img {
     width: 80%;
     height: 80%;
     margin-top: 2rem;
     object-fit: cover;
-    border-radius: 10% 10% 10% 10%;
+    border-radius: 50% 20% 50% 10%;
 }
-
 
