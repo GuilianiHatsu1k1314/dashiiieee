@@ -32,6 +32,7 @@
 }
 .img-section {
    background-color: burlywood;
+   overflow: hidden;
 }
 
 .img-section img {
@@ -39,3 +40,5 @@
     height: 100%;
     object-fit: cover;
 }
+
+
