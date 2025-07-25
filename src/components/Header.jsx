@@ -16,7 +16,7 @@ function Header() {
                         <Link to="/landing">Home</Link>
                     </li>
                     <li>
-                        <Button onClick={() => navigate('/login')}>
+                        <Button onClick={() => navigate('/login')} className='nav-login-button'>
                             <p>Login</p>
                         </Button>
                     </li>
