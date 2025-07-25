@@ -5,13 +5,14 @@ import LandingPage from './pages/LandingPage';
 import Dashboard from './pages/Dashboard';
 import ApiDemo from './pages/ApiDemo';
 import ReportPage from './pages/ReportPage';
+import Header from './components/Header';
 
 function App() {
   const [user, setUser] = useState(null); // user = string (username)
 
   return (
     <Router>
-      
+      <Header />
       <main>
         <Routes>
           <Route path="/" element={<LandingPage />} />
