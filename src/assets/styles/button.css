@@ -1,9 +1,9 @@
 .get-started-button {
     font-size: 1.4rem;
-    padding: 1rem 2.5rem;
+    padding: 1.1rem 4rem;
     background-color: rgba(140, 205, 235);
     border: none;
-    border-radius: 2rem;
+    border-radius: 2.1rem;
     cursor: pointer;
 }
 
