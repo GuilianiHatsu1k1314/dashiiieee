@@ -5,6 +5,7 @@ header {
     justify-content: space-between;
     padding: 0.3rem 2rem 0.3rem 2rem;
     width: 100%;
+    z-index: 1000;
 }
 
 nav {
