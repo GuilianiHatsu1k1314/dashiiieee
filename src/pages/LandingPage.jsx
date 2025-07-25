@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Button from '../components/Button';
 import '../assets/styles/button.css';
 import '../assets/styles/landing-page.css';
+import deliveryGuy from '../assets/images/delivery-guy.jpeg';
 
 function LandingPage() {
   const navigate = useNavigate();
@@ -18,7 +19,7 @@ function LandingPage() {
           </Button>
         </div>
         <div className='img-section'>
-          <img src=''/>
+          <img src={deliveryGuy} alt="Delivery Guy" />
         </div>
       </section>
     </div>
