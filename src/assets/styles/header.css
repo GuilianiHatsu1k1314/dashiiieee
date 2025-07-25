@@ -8,12 +8,15 @@ header {
 }
 
 nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
     width: 50%;
+    
 }
 
 ul {
     display: flex;
-    justify-content: flex-end;
     gap: 1.5rem;
     list-style: none;
 }
