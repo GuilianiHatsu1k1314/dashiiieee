@@ -1,0 +1,6 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.3rem 2rem 0.3rem 2rem;
+    width: 100%;
+}
