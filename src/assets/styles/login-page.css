@@ -36,3 +36,18 @@ input{
     border: 1px solid rgb(177, 177, 177);
     border-radius: 20px;
 }
+
+.img-section {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.img-section > img {
+    width: 80%;
+    height: 80%;
+    margin-top: 2rem;
+    object-fit: cover;
+    border-radius: 50% 20% 50% 10%;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
