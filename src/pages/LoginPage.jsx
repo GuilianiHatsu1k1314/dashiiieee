@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '../components/Button';
 import '../assets/styles/login-page.css';
-import deliveryGuy from '../assets/images/delivery-guy.jpeg';
+import deliveryGuy from '../assets/images/guy-package.png';
 
 function LoginPage({ onLogin }) {
   const [username, setUsername] = useState('');
