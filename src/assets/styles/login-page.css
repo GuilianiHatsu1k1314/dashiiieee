@@ -1,5 +1,5 @@
 .login-wrapper{
-    background-color: burlywood;
+    background-color: #799eff;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -13,14 +13,14 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color:#ffebcd;
+    background-color: rgb(90, 135, 249);
     text-align: center;
     display: flex;
     flex-direction: column;
     height: 500px;
     width: 500px;
     padding: 30px;
-    box-shadow: 10px 10px 5px #85550d;
+    box-shadow: 10px 10px 5px #3b72ff;
     
 }
 label{
