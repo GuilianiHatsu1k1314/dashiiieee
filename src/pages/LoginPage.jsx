@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '../components/Button';
 import '../assets/styles/login-page.css';
+import deliveryGuy from '../assets/images/delivery-guy.jpeg';
 
 function LoginPage({ onLogin }) {
   const [username, setUsername] = useState('');
@@ -39,6 +40,9 @@ function LoginPage({ onLogin }) {
         Login
       </Button>
       </div>
+      <div className='img-section'>
+          <img src={deliveryGuy} alt="Delivery Guy" />
+        </div>
     </div>
   );
 }
