@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import '../assets/styles/dashboard.css';
+import Button from '../components/Button';
 
 function ReportPage() {
   const [users, setUsers] = useState([]);
@@ -25,12 +26,12 @@ function ReportPage() {
 
   return (
     <div className="report-container">
-      <button 
+      <Button 
         onClick={() => navigate('/dashboard')} 
-        style={{ marginBottom: '20px', padding: '8px 16px', backgroundColor: 'teal', color: '#fff', border: 'none', borderRadius: '5px', cursor: 'pointer' }}
+        className='back-button'
       >
         ← Back to Dashboard
-      </button>
+      </Button>
 
       <h2 style={{ marginBottom: '1rem' }}>📋 User Report</h2>
 
