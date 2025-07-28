@@ -3,7 +3,7 @@
     width: 200px;
     height: 100%;
     background: #eee;
-    padding: 2rem 1.5rem;
+    padding: 2rem 0.5rem;
 }
 
 .sidebar-container h3 {
@@ -17,7 +17,12 @@
     list-style: none;
     gap: 1rem;
 }
-
 .sidebar-item {
-    
+    display: block;
+    width: 100%;
+    padding: 0.8rem;
+    cursor: pointer;
+    background-color: aqua;
+    border: none;
+    border-radius: 5px;
 }

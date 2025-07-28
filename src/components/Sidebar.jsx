@@ -6,8 +6,8 @@ function Sidebar() {
     <nav className='sidebar-container'>
       <h3>📂 Menu</h3>
       <ul>
-        <li><div className='sidebar-item'><Link to="crud">CRUD</Link></div></li>
-        <li><div className='sidebar-item'><Link to="report">Report</Link></div></li>
+        <li><Link to="crud" className='sidebar-item'>CRUD</Link></li>
+        <li><Link to="report" className='sidebar-item'>Report</Link></li>
       </ul>
     </nav>
   );
