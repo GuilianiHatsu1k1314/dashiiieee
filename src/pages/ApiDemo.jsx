@@ -86,14 +86,7 @@ function ApiDemo() {
         </div>
       )}
       <div style={{ display: 'flex', justifyContent: 'center', padding: '30px' }}>
-        <div style={{
-          background: '#fff',
-          borderRadius: '12px',
-          padding: '30px',
-          width: '100%',
-          maxWidth: '600px',
-          boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)'
-        }}>
+        <div className='main-card'>
           <h2 style={{ marginTop: 0, marginBottom: '20px' }}>API Integration Demo (Axios)</h2>
           {/*Changed the ui a bit, did a conditional rendering based on the mode(options in the sidebar) for crud.*/}
           {mode === 'add' && (
@@ -110,7 +103,7 @@ function ApiDemo() {
             {users.map(user => (
               <li key={user.id}>
                 <span>
-                  {mode ? `[${user.id}] ` : ''}{user.name}
+                  <i class="fa-solid fa-circle-user"></i>&nbsp;{mode ? `[${user.id}] ` : ''}{user.name}
                 </span>
                 {mode === 'edit' && (
                   <button onClick={() => updateUser(user.id)}>Edit</button>
