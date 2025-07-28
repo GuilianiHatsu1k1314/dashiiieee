@@ -30,3 +30,17 @@
     background-color: rgb(0, 123, 255);
     color: white;
 }
+
+.signout-button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.signout-button:hover {
+  background-color: #c0392b;
+}
