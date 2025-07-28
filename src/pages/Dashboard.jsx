@@ -7,7 +7,7 @@ function Dashboard({ user }) {
   return (
     <div className='dashboard-wrapper'>
       <Sidebar />
-      <div style={{ flex: 1, padding: '20px' }}>
+      <div className='content'>
         <h2>Welcome, <span style={{ color: 'teal' }}>{user}</span>!</h2>
         <Outlet />
       </div>
