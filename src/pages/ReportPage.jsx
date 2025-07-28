@@ -1,17 +1,24 @@
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 function ReportPage() {
   const [users, setUsers] = useState([]);
   const navigate = useNavigate();
+  const API_URL = 'http://localhost:3001/users';
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      const storedUsers = localStorage.getItem('user_data');
-      if (storedUsers) {
-        setUsers(JSON.parse(storedUsers));
+    const fetchUsers = async () => {
+      try {
+        const res = await axios.get(API_URL);
+        setUsers(res.data);
+      } catch (err) {
+        console.error('Failed to fetch users');
       }
-    }, 1000); //fetches every second to refresh the report page
+    };
+
+    fetchUsers();
+    const interval = setInterval(fetchUsers, 1000);
 
     return () => clearInterval(interval);
   }, []);

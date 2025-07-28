@@ -13,7 +13,6 @@ function Sidebar() {
     <nav className='sidebar-container'>
       <h3>Menu</h3>
       <ul>
-        <li><NavLink to="crud" className='sidebar-item'>CRUD</NavLink></li>
         <li><NavLink to="report" className='sidebar-item'>Report</NavLink></li>
       </ul>
 

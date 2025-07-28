@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
 
 function ApiDemo() {
   const [users, setUsers] = useState([]);
@@ -8,14 +7,8 @@ function ApiDemo() {
   const [error, setError] = useState(null);
   const [newUserName, setNewUserName] = useState('');
 
-  //installed a server
-  //json server api url
-  //for the crud to reflect changes, created a mock database, cruddb.json
   const API_URL = 'http://localhost:3001/users';
-  const navigate = useNavigate();
-  
 
-  // ---------- GET: Fetch all users ----------
   useEffect(() => {
     fetchUsers();
   }, []);
@@ -33,45 +26,38 @@ function ApiDemo() {
     }
   };
 
-  // ---------- POST: Add new user ----------
   const addUser = async () => {
     try {
-      //No inputs = error: Failed to add user.
       if (!newUserName) throw new Error('Name cannot be empty');
-      //adds new user, then saves the updated list to the localStorage.
       const res = await axios.post(API_URL, { name: newUserName });
       const newUsers = [...users, res.data];
       localStorage.setItem('user_data', JSON.stringify(newUsers));
       setUsers(newUsers);
       setNewUserName('');
-    } catch (a) {
+    } catch {
       alert('Failed to add user.');
     }
   };
 
-  // ---------- PUT: Update user name ----------
   const updateUser = async (id) => {
     const updatedName = prompt('Enter new name:');
     if (!updatedName) return;
     try {
-      //edits / updates name, then saves the updated list to the localStorage.
       const res = await axios.put(`${API_URL}/${id}`, { name: updatedName });
       setUsers(prev => {
-      const updatedUsers = prev.map(user =>
-        user.id === id ? { ...user, name: res.data.name } : user
-      );
-      localStorage.setItem('user_data', JSON.stringify(updatedUsers));
-      return updatedUsers;
-    });
+        const updatedUsers = prev.map(user =>
+          user.id === id ? { ...user, name: res.data.name } : user
+        );
+        localStorage.setItem('user_data', JSON.stringify(updatedUsers));
+        return updatedUsers;
+      });
     } catch {
       alert('Failed to update user.');
     }
   };
 
-  // ---------- DELETE: Remove user ----------
   const deleteUser = async (id) => {
     try {
-      //remove deleted user from users, then saves the updated list to the localStorage.
       await axios.delete(`${API_URL}/${id}`);
       const updatedUsers = users.filter(user => user.id !== id);
       setUsers(updatedUsers);
@@ -81,39 +67,99 @@ function ApiDemo() {
     }
   };
 
-  // ---------- Render ----------
   return (
-    
-    <div style={{ padding: '20px' }}>
-      {/*Button to navigate to dashboard*/}
-       <button onClick={() => navigate('/dashboard')} style={{ marginBottom: '10px' }}>Back to Dashboard?</button>
-      <h1>API Integration Demo (with Axios)</h1>
+    <div style={{ display: 'flex', justifyContent: 'center', padding: '30px' }}>
+      <div style={{
+        background: '#fff',
+        borderRadius: '12px',
+        padding: '30px',
+        width: '100%',
+        maxWidth: '600px',
+        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)'
+      }}>
+        <h2 style={{ marginTop: 0, marginBottom: '20px' }}>API Integration Demo (Axios)</h2>
 
-      {/* Add user form */}
-      <div style={{ marginBottom: '10px' }}>
-        <input
-          type="text"
-          value={newUserName}
-          placeholder="New user name"
-          onChange={e => setNewUserName(e.target.value)}
-        />
-        <button onClick={addUser}>Add User</button>
+        <div style={{ marginBottom: '20px', display: 'flex', gap: '10px' }}>
+          <input
+            type="text"
+            value={newUserName}
+            placeholder="Enter name"
+            onChange={e => setNewUserName(e.target.value)}
+            style={{
+              flex: 1,
+              padding: '8px',
+              borderRadius: '6px',
+              border: '1px solid #ccc'
+            }}
+          />
+          <button
+            onClick={addUser}
+            style={{
+              padding: '8px 14px',
+              border: 'none',
+              backgroundColor: 'teal',
+              color: 'white',
+              borderRadius: '6px',
+              cursor: 'pointer'
+            }}
+          >
+            Add
+          </button>
+        </div>
+
+        {loading && <p>Loading users...</p>}
+        {error && <p style={{ color: 'red' }}>Error: {error}</p>}
+
+        <ul style={{ listStyle: 'none', paddingLeft: 0 }}>
+          {users.map(user => (
+            <li
+              key={user.id}
+              style={{
+                marginBottom: '10px',
+                padding: '10px',
+                border: '1px solid #ddd',
+                borderRadius: '8px',
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center'
+              }}
+            >
+              <span>
+                <strong>[{user.id}]</strong> {user.name}
+              </span>
+              <span>
+                <button
+                  onClick={() => updateUser(user.id)}
+                  style={{
+                    marginRight: '8px',
+                    padding: '5px 10px',
+                    border: 'none',
+                    backgroundColor: '#007bff',
+                    color: '#fff',
+                    borderRadius: '5px',
+                    cursor: 'pointer'
+                  }}
+                >
+                  Edit
+                </button>
+                <button
+                  onClick={() => deleteUser(user.id)}
+                  style={{
+                    padding: '5px 10px',
+                    border: 'none',
+                    backgroundColor: '#dc3545',
+                    color: '#fff',
+                    borderRadius: '5px',
+                    cursor: 'pointer'
+                  }}
+                >
+                  Delete
+                </button>
+              </span>
+            </li>
+          ))}
+        </ul>
       </div>
-
-      {/* Loading/Error states */}
-      {loading && <p>Loading users...</p>}
-      {error && <p style={{ color: 'red' }}>Error: {error}</p>}
-
-      {/* List of users */}
-      <ul>
-        {users.map(user => (
-          <li key={user.id}>
-            <strong>[{user.id}]</strong> {user.name}{' '}
-            <button onClick={() => updateUser(user.id)}>Edit</button>{' '}
-            <button onClick={() => deleteUser(user.id)}>Delete</button>
-          </li>
-        ))}
-      </ul>
     </div>
   );
 }
