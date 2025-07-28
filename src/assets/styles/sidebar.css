@@ -2,7 +2,7 @@
     position: sticky;
     width: 200px;
     height: 100%;
-    background: #eee;
+    background-color: rgb(135, 206, 235);
     padding: 2rem 0.5rem;
 }
 
@@ -22,7 +22,11 @@
     width: 100%;
     padding: 0.8rem;
     cursor: pointer;
-    background-color: aqua;
     border: none;
     border-radius: 5px;
+}
+
+.sidebar-item.active {
+    background-color: rgb(0, 123, 255);
+    color: white;
 }
