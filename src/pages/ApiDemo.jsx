@@ -68,6 +68,14 @@ function ApiDemo() {
   };
 
   return (
+    <>
+      <div className='card-container'>
+        <div className='dashboard-card'>
+          <div className='icon blue'>&#128202;</div>
+          <h3>{users.length}</h3>
+          <p>Total Records</p>
+        </div>
+      </div>
     <div style={{ display: 'flex', justifyContent: 'center', padding: '30px' }}>
       <div style={{
         background: '#fff',
@@ -160,7 +168,7 @@ function ApiDemo() {
           ))}
         </ul>
       </div>
-    </div>
+    </div></>
   );
 }
 
