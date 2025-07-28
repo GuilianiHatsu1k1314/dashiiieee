@@ -1,6 +1,7 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Sidebar from '../components/Sidebar';
+import '../assets/styles/dashboard.css';
 
 function Dashboard({ user }) {
   return (
