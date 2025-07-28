@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
+import Button from '../components/Button';
 //ApiDemo.jsx
 function ApiDemo() {
   const location = useLocation();
@@ -92,7 +93,7 @@ function ApiDemo() {
           {mode === 'add' && (
             <div>
               <input type="text" value={newUserName} placeholder="Enter username" onChange={e => setNewUserName(e.target.value)} />
-              <button onClick={addUser}>Add &nbsp; <i class="fa-solid fa-plus"></i></button>
+              <Button onClick={addUser}>Add &nbsp; <i class="fa-solid fa-plus"></i></Button>
             </div>
           )}
 
@@ -106,17 +107,17 @@ function ApiDemo() {
                   <i class="fa-solid fa-circle-user"></i>&nbsp;{mode ? `[${user.id}] ` : ''}{user.name}
                 </span>
                 {mode === 'edit' && (
-                  <button onClick={() => updateUser(user.id)}><i class="fa-solid fa-pen-to-square"></i></button>
+                  <Button onClick={() => updateUser(user.id)}><i class="fa-solid fa-pen-to-square"></i></Button>
                 )}
                 {mode === 'delete' && (
-                  <button onClick={() => deleteUser(user.id)}> <i class="fa-solid fa-trash"></i></button>
+                  <Button onClick={() => deleteUser(user.id)}> <i class="fa-solid fa-trash"></i></Button>
                 )}
               </li>
             ))}
           </ul>
           {/*Show back button only when in add/edit/delete mode*/}
           {mode && (
-            <button onClick={() => navigate('/dashboard')}>Back to Dashboard</button>
+            <Button onClick={() => navigate('/dashboard')}>Back to Dashboard</Button>
           )}
 
         </div>
