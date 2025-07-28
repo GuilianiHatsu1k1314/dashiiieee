@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-import '../assets/styles/dashboard.css';
-import Button from '../components/Button';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import "../assets/styles/dashboard.css";
+import Button from "../components/Button";
 
 function ReportPage() {
   const [users, setUsers] = useState([]);
   const navigate = useNavigate();
-  const API_URL = 'http://localhost:3001/users';
+  const API_URL = "http://localhost:3001/users";
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -15,7 +15,7 @@ function ReportPage() {
         const res = await axios.get(API_URL);
         setUsers(res.data);
       } catch (err) {
-        console.error('Failed to fetch users');
+        console.error("Failed to fetch users");
       }
     };
 
@@ -26,14 +26,11 @@ function ReportPage() {
 
   return (
     <div className="report-container">
-      <Button 
-        onClick={() => navigate('/dashboard')} 
-        className='back-button'
-      >
+      <Button onClick={() => navigate("/dashboard")} className="back-button">
         ← Back to Dashboard
       </Button>
 
-      <h2 style={{ marginBottom: '1rem' }}>📋 User Report</h2>
+      <h2 style={{ marginBottom: "1rem" }}>📋 User Report</h2>
 
       <div className="dashboard-card report-card">
         <div className="icon blue">👥</div>

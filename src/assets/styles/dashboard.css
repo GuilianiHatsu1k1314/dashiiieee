@@ -1,6 +1,6 @@
 .dashboard-wrapper {
-    display: flex;
-    height: 100vh;
+  display: flex;
+  height: 100vh;
 }
 
 .content {
@@ -20,19 +20,19 @@
 }
 
 .dashboard-card {
-  flex:1;
+  flex: 1;
   min-width: 300px;
-  
+
   background: white;
   padding: 12px;
   border-radius: 8px;
   text-align: center;
-  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: transform 0.2s ease;
 }
 
-.dashboard-card > ul{
+.dashboard-card > ul {
   list-style: none;
 }
 .dashboard-card:hover {
@@ -106,5 +106,5 @@
 }
 
 .main-card > ul {
-  list-style: none;;
+  list-style: none;
 }

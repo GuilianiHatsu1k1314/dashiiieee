@@ -1,16 +1,16 @@
-import React from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
-import '../assets/styles/sidebar.css';
+import React from "react";
+import { NavLink, useNavigate } from "react-router-dom";
+import "../assets/styles/sidebar.css";
 //Applied the crud functions as options in the side bar component.
 function Sidebar() {
   const navigate = useNavigate();
 
   const handleSignOut = () => {
-    navigate('/');
+    navigate("/");
   };
 
   return (
-    <nav className='sidebar-container'>
+    <nav className="sidebar-container">
       <h3>Menu</h3>
       <ul>
         {/*Added query parameters for distinction in crud.*/}
@@ -33,7 +33,7 @@ function Sidebar() {
         </li>
 
         <li>
-          <NavLink to="/dashboard/report" className='sidebar-item'>
+          <NavLink to="/dashboard/report" className="sidebar-item">
             <i className="fa-regular fa-file"></i> &nbsp;Report
           </NavLink>
         </li>
@@ -43,7 +43,6 @@ function Sidebar() {
             Sign Out
           </button>
         </li>
-        
       </ul>
     </nav>
   );
