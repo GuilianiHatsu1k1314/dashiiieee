@@ -37,7 +37,7 @@ function ReportPage() {
       <div className="dashboard-card">
         <div className="icon blue">👥</div>
         <h3>Total Users: {users.length}</h3>
-        <ul style={{ paddingLeft: '1.5rem' }}>
+        <ul>
           {users.length === 0 ? (
             <p>No users available.</p>
           ) : (
