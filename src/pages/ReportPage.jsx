@@ -34,7 +34,7 @@ function ReportPage() {
 
       <h2 style={{ marginBottom: '1rem' }}>📋 User Report</h2>
 
-      <div className="dashboard-card">
+      <div className="dashboard-card report-card">
         <div className="icon blue">👥</div>
         <h3>Total Users: {users.length}</h3>
         <ul>

@@ -22,7 +22,7 @@
 .dashboard-card {
   flex:1;
   min-width: 300px;
-  max-width: 600px;
+  
   background: white;
   padding: 12px;
   border-radius: 8px;
@@ -32,6 +32,9 @@
   transition: transform 0.2s ease;
 }
 
+.dashboard-card > ul{
+  list-style: none;
+}
 .dashboard-card:hover {
   transform: translateY(-3px);
 }
@@ -70,10 +73,13 @@
 }
 
 .report-container {
-  padding-top: 1rem;
+  margin-top: 5rem;
+  margin-left: 5rem;
 }
 
 .report-card {
+  padding: 2rem 0;
+  width: 90%;
   cursor: default;
   background-color: #f9f9f9;
   transition: 0.3s;
