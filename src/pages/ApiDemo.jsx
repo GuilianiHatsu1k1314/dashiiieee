@@ -92,7 +92,7 @@ function ApiDemo() {
           {mode === 'add' && (
             <div>
               <input type="text" value={newUserName} placeholder="Enter username" onChange={e => setNewUserName(e.target.value)} />
-              <button onClick={addUser}>Add</button>
+              <button onClick={addUser}>Add &nbsp; <i class="fa-solid fa-plus"></i></button>
             </div>
           )}
 
@@ -106,10 +106,10 @@ function ApiDemo() {
                   <i class="fa-solid fa-circle-user"></i>&nbsp;{mode ? `[${user.id}] ` : ''}{user.name}
                 </span>
                 {mode === 'edit' && (
-                  <button onClick={() => updateUser(user.id)}>Edit</button>
+                  <button onClick={() => updateUser(user.id)}><i class="fa-solid fa-pen-to-square"></i></button>
                 )}
                 {mode === 'delete' && (
-                  <button onClick={() => deleteUser(user.id)}>Delete</button>
+                  <button onClick={() => deleteUser(user.id)}> <i class="fa-solid fa-trash"></i></button>
                 )}
               </li>
             ))}
