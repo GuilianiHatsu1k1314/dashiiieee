@@ -1,7 +1,7 @@
 import React from 'react';
 import '../assets/styles/header.css';
 import Button from '../components/Button';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 function Header() {
@@ -13,7 +13,7 @@ function Header() {
           <nav className='nav-container'>
             <ul>
               <li>
-                <Link to="/landing">Home</Link>
+                <NavLink to="/landing">Home</NavLink>
               </li>
               <li>
                 <Button onClick={() => navigate('/login')} className='nav-login-button'>
