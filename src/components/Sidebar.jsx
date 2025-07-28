@@ -15,19 +15,19 @@ function Sidebar() {
       <ul>
         {/*Added query parameters for distinction in crud.*/}
         <li>
-          <NavLink to="/dashboard/crud?mode=add" className="sidebar-item">
+          <NavLink to="/dashboard/add?mode=add" className="sidebar-item">
             <i className="fa-solid fa-user-plus"></i> &nbsp;Add User
           </NavLink>
         </li>
 
         <li>
-          <NavLink to="/dashboard/crud?mode=edit" className="sidebar-item">
+          <NavLink to="/dashboard/edit?mode=edit" className="sidebar-item">
             <i className="fa-solid fa-user-pen"></i> &nbsp;Edit User
           </NavLink>
         </li>
 
         <li>
-          <NavLink to="/dashboard/crud?mode=delete" className="sidebar-item">
+          <NavLink to="/dashboard/delete?mode=delete" className="sidebar-item">
             <i className="fa-solid fa-user-minus"></i> &nbsp;Delete User
           </NavLink>
         </li>

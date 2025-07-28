@@ -24,7 +24,9 @@ function App() {
             element={user ? <Dashboard user={user} /> : <Navigate to="/login" />}
           >
             <Route index element={<ApiDemo />} /> {/* 👈 Default route */}
-            <Route path="crud" element={<ApiDemo />} />
+            <Route path="add" element={<ApiDemo />} />
+            <Route path="edit" element={<ApiDemo />} />
+            <Route path="delete" element={<ApiDemo />} />
             <Route path="report" element={<ReportPage />} />
           </Route>
         </Routes>
