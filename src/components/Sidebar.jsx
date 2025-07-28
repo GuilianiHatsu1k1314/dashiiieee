@@ -14,7 +14,9 @@ function Sidebar() {
       <h3>Menu</h3>
       <ul>
         <li>
-          <NavLink to="/dashboard/report" className='sidebar-item'>Report</NavLink>
+          <NavLink to="/dashboard/report" className='sidebar-item'>
+            <i className="fa-regular fa-file"></i> &nbsp;Report
+          </NavLink>
         </li>
 
         <li>
