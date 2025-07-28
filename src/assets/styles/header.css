@@ -15,7 +15,7 @@ h1 {
     font-family: 'Roboto', sans-serif;
 }
 
-nav {
+.nav-container {
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -23,14 +23,14 @@ nav {
     
 }
 
-ul {
+.nav-container ul {
     display: flex;
     align-items: center;
     gap: 2.5rem;
     list-style: none;
 }
 
-li > a {
+.nav-container li > a {
     text-decoration: none;
     color: black;
     font-weight: 500;

@@ -10,7 +10,7 @@ function Header() {
     return (
       <header>
         <h1>📦 Dashiiieee</h1>
-          <nav>
+          <nav className='nav-container'>
             <ul>
               <li>
                 <Link to="/landing">Home</Link>
