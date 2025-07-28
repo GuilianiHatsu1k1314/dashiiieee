@@ -24,8 +24,12 @@
     cursor: pointer;
     border: none;
     border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
+.sidebar-item:hover {
+    background-color: rgb(0, 123, 255);
+}
 .sidebar-item.active {
     background-color: rgb(0, 123, 255);
     color: white;
@@ -39,6 +43,7 @@
   width: 100%;
   cursor: pointer;
   border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
 .signout-button:hover {
