@@ -8,19 +8,21 @@
   padding: 20px 30px;
   margin-left: 20px;
   background-color: rgb(245, 254, 253);
+  overflow: hidden;
 }
 
 .card-container {
   display: flex;
+  justify-content: center;
   gap: 15px;
   margin-top: 20px;
   flex-wrap: wrap;
 }
 
 .dashboard-card {
-  flex: 1;
-  min-width: 150px;
-  max-width: 200px;
+  flex:1;
+  min-width: 300px;
+  max-width: 600px;
   background: white;
   padding: 12px;
   border-radius: 8px;
@@ -79,4 +81,11 @@
 
 .report-card:hover {
   transform: scale(1.02);
+}
+
+.default-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }

@@ -74,7 +74,7 @@ function ApiDemo() {
   };
 
   return (
-    <>
+    <><div className='default-page'>
       {/*Condition: Only show the total records once you are back to dashboard.*/}
       {!mode && (
         <div className='card-container'>
@@ -127,7 +127,10 @@ function ApiDemo() {
           )}
 
         </div>
-      </div></>
+      </div>
+
+    </div>
+      </>
   );
 }
 
