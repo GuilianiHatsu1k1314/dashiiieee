@@ -25,14 +25,15 @@
     cursor: pointer;
     border: none;
     border-radius: 5px;
+    text-decoration: none;
     transition: background-color 0.3s ease;
 }
 
 .sidebar-item:hover {
-    background-color: rgb(0, 123, 255);
+    background-color: rgb(0, 83, 172);
 }
 .sidebar-item.active {
-    background-color: rgb(0, 123, 255);
+    background-color: rgb(0, 104, 214);
     color: white;
 }
 
