@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import '../assets/styles/dashboard.css';
 
 function ReportPage() {
   const [users, setUsers] = useState([]);
@@ -19,25 +20,35 @@ function ReportPage() {
 
     fetchUsers();
     const interval = setInterval(fetchUsers, 1000);
-
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div>
-      <button onClick={() => navigate('/dashboard')} style={{ marginBottom: '10px' }}>Back to Dashboard?</button>
-      <h2>📋 User Report</h2>
-      {users.length === 0 ? (
-        <p>No users available.</p>
-      ) : (
-        <ul>
-          {users.map(user => (
-            <li key={user.id}>
-              {user.name} (ID: {user.id})
-            </li>
-          ))}
+    <div className="report-container">
+      <button 
+        onClick={() => navigate('/dashboard')} 
+        style={{ marginBottom: '20px', padding: '8px 16px', backgroundColor: 'teal', color: '#fff', border: 'none', borderRadius: '5px', cursor: 'pointer' }}
+      >
+        ← Back to Dashboard
+      </button>
+
+      <h2 style={{ marginBottom: '1rem' }}>📋 User Report</h2>
+
+      <div className="dashboard-card">
+        <div className="icon blue">👥</div>
+        <h3>Total Users: {users.length}</h3>
+        <ul style={{ paddingLeft: '1.5rem' }}>
+          {users.length === 0 ? (
+            <p>No users available.</p>
+          ) : (
+            users.map((user) => (
+              <li key={user.id}>
+                {user.name} (ID: {user.id})
+              </li>
+            ))
+          )}
         </ul>
-      )}
+      </div>
     </div>
   );
 }

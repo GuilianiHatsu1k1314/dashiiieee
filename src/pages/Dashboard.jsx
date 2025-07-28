@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Sidebar from '../components/Sidebar';
-import ApiDemo from './ApiDemo'; // make sure path is correct
+import { Outlet } from 'react-router-dom';
 import '../assets/styles/dashboard.css';
 
 function Dashboard({ user }) {
@@ -53,9 +53,7 @@ function Dashboard({ user }) {
             <p>Click to Add</p>
           </div>
         </div>
-
-        {/* 👇 Embed CRUD directly below cards */}
-        <ApiDemo />
+        <Outlet />
       </div>
     </div>
   );

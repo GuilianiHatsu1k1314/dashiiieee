@@ -13,10 +13,9 @@ function Sidebar() {
     <nav className='sidebar-container'>
       <h3>Menu</h3>
       <ul>
-        <li><NavLink to="report" className='sidebar-item'>Report</NavLink></li>
+        <li><NavLink to="/dashboard/report" className='sidebar-item'>Report</NavLink></li>
       </ul>
 
-      {/* Sign Out Button at Bottom */}
       <div className="sidebar-footer">
         <button onClick={handleSignOut} className="signout-button">
           Sign Out
