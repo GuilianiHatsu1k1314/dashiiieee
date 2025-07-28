@@ -13,7 +13,7 @@ function Header() {
           <nav className='nav-container'>
             <ul>
               <li>
-                <NavLink to="/landing">Home</NavLink>
+                <NavLink to="/">Home</NavLink>
               </li>
               <li>
                 <Button onClick={() => navigate('/login')} className='nav-login-button'>

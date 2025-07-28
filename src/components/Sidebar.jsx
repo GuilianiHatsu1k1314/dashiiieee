@@ -13,14 +13,19 @@ function Sidebar() {
     <nav className='sidebar-container'>
       <h3>Menu</h3>
       <ul>
-        <li><NavLink to="/dashboard/report" className='sidebar-item'>Report</NavLink></li>
-      </ul>
+        <li>
+          <NavLink to="/dashboard/report" className='sidebar-item'>
+            <i className="fa-regular fa-file"></i> &nbsp;Report
+          </NavLink>
+        </li>
 
-      <div className="sidebar-footer">
-        <button onClick={handleSignOut} className="signout-button">
-          Sign Out
-        </button>
-      </div>
+        <li>
+          <button onClick={handleSignOut} className="signout-button">
+            Sign Out
+          </button>
+        </li>
+        
+      </ul>
     </nav>
   );
 }
