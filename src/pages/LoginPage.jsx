@@ -30,7 +30,7 @@ function LoginPage({ onLogin }) {
       />
       <label>Password</label>
       <input
-        type="text"
+        type="password"
         placeholder="type your password"
         value={password}
         onChange={e => setPassword(e.target.value)}
