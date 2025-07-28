@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import Button from '../components/Button';
+import '../assets/styles/button.css'; // Assuming you have a separate CSS file for ApiDemo
 //ApiDemo.jsx
 function ApiDemo() {
   const location = useLocation();
@@ -93,7 +94,7 @@ function ApiDemo() {
           {mode === 'add' && (
             <div>
               <input type="text" value={newUserName} placeholder="Enter username" onChange={e => setNewUserName(e.target.value)} />
-              <Button onClick={addUser}>Add &nbsp; <i class="fa-solid fa-plus"></i></Button>
+              <Button onClick={addUser} className="add-user-btn">Add &nbsp; <i className="fa-solid fa-plus"></i></Button>
             </div>
           )}
 
@@ -104,20 +105,20 @@ function ApiDemo() {
             {users.map(user => (
               <li key={user.id}>
                 <span>
-                  <i class="fa-solid fa-circle-user"></i>&nbsp;{mode ? `[${user.id}] ` : ''}{user.name}
+                  <i className="fa-solid fa-circle-user"></i>&nbsp;{mode ? `[${user.id}] ` : ''}{user.name}
                 </span>
                 {mode === 'edit' && (
-                  <Button onClick={() => updateUser(user.id)}><i class="fa-solid fa-pen-to-square"></i></Button>
+                  <Button onClick={() => updateUser(user.id)} className="edit-user-btn"><i className="fa-solid fa-pen-to-square"></i></Button>
                 )}
                 {mode === 'delete' && (
-                  <Button onClick={() => deleteUser(user.id)}> <i class="fa-solid fa-trash"></i></Button>
+                  <Button onClick={() => deleteUser(user.id)} className="delete-user-btn"> <i className="fa-solid fa-trash"></i></Button>
                 )}
               </li>
             ))}
           </ul>
           {/*Show back button only when in add/edit/delete mode*/}
           {mode && (
-            <Button onClick={() => navigate('/dashboard')}>Back to Dashboard</Button>
+            <Button onClick={() => navigate('/dashboard')} className='back-button'>Back to Dashboard</Button>
           )}
 
         </div>
