@@ -8,21 +8,21 @@ function Header() {
     const navigate = useNavigate();
 
     return (
-        <header>
-            <h1>📦 Dashiiieee</h1>
-            <nav>
-                <ul>
-                    <li>
-                        <Link to="/landing">Home</Link>
-                    </li>
-                    <li>
-                        <Button onClick={() => navigate('/login')} className='nav-login-button'>
-                            <p>Login</p>
-                        </Button>
-                    </li>
-                </ul>
-            </nav>
-        </header>
+      <header>
+        <h1>📦 Dashiiieee</h1>
+          <nav>
+            <ul>
+              <li>
+                <Link to="/landing">Home</Link>
+              </li>
+              <li>
+                <Button onClick={() => navigate('/login')} className='nav-login-button'>
+                  <p>Login</p>
+                </Button>
+              </li>
+            </ul>
+          </nav>
+      </header>
     );
 }
 
