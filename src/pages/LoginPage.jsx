@@ -23,7 +23,7 @@ function LoginPage({ onLogin }) {
         <label>Email Address</label>
         <input
           type="text"
-          placeholder="type your email address"
+          placeholder="type your username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
