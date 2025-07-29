@@ -40,7 +40,7 @@ function LoginPage({ onLogin }) {
           Login
         </Button>
       </div>
-      <div className="img-section">
+      <div className="img-section-login">
         <img src={deliveryGuy} alt="Delivery Guy" />
       </div>
     </div>
