@@ -115,7 +115,7 @@ function ApiDemo() {
 
             <ul>
               {users.map((user) => (
-                <li key={user.id}>
+                <li key={user.id}  className="user-item">
                   <span>
                     <i className="fa-solid fa-circle-user"></i>&nbsp;
                     {mode ? `[${user.id}] ` : ""}
