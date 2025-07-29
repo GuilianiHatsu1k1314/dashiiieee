@@ -8,7 +8,7 @@ function Dashboard({ user }) {
       <Sidebar />
       <div className="content">
         <h2>
-          Welcome, <span style={{ color: "teal" }}>{user}</span>!
+          Welcome, <span className="username-highlight">{user}</span>!
         </h2>
         <Outlet />
       </div>
