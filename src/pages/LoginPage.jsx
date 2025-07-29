@@ -20,7 +20,7 @@ function LoginPage({ onLogin }) {
     <div class="login-wrapper">
       <div class="login-container">
         <h2>SIGN IN</h2>
-        <label>Email Address</label>
+        <label>Username</label>
         <input
           type="text"
           placeholder="type your username"
