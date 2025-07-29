@@ -27,7 +27,7 @@ function ReportPage() {
   return (
     <div className="report-container">
       <Button onClick={() => navigate("/dashboard")} className="back-button">
-        ← Back to Dashboard
+        Back to Dashboard
       </Button>
 
       <h2 style={{ marginBottom: "1rem" }}>📋 User Report</h2>
