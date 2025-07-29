@@ -1,32 +1,69 @@
 .get-started-button {
-    font-size: 1.4rem;
-    padding: 1.1rem 4rem;
-    background-color: rgba(140, 205, 235);
-    border: none;
-    border-radius: 2.1rem;
-    cursor: pointer;
+  font-size: 1.4rem;
+  padding: 1.1rem 4rem;
+  background-color: rgba(140, 205, 235);
+  border: none;
+  border-radius: 2.1rem;
+  cursor: pointer;
 }
 
 .login-button {
-    margin-top: 120px;
-    width: 200px;
-    font-size: 20px;
-    padding: 5px;
-    background-color: rgba(140, 205, 235);
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  margin-top: 120px;
+  width: 200px;
+  font-size: 20px;
+  padding: 5px;
+  background-color: rgba(140, 205, 235);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .nav-login-button {
-    font-size: 1.1rem;
-    padding: 0.45rem 2rem;
-    background-color: rgba(140, 205, 235);
-    border: none;
-    border-radius: 2.1rem;
-    cursor: pointer;
+  font-size: 1.1rem;
+  padding: 0.45rem 2rem;
+  background-color: rgba(140, 205, 235);
+  border: none;
+  border-radius: 2.1rem;
+  cursor: pointer;
+}
+
+.add-user-btn {
+  padding: 0.5rem 1.5rem;
+  margin: 0.5rem 0;
+  border: none;
+  background-color: rgb(0, 66, 92);
+  cursor: pointer;
+  color: white;
+  border-radius: 3px;
+}
+.edit-user-btn,
+.delete-user-btn {
+  padding: 1rem;
+  font-size: 1.2rem;
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+}
+
+.delete-user-btn i {
+  color: red;
+}
+
+.edit-user-btn i {
+  color: rgb(231, 127, 0);
+}
+
+.back-button {
+  margin: 20px 0;
+  padding: 8px 16px;
+  background-color: teal;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
 }

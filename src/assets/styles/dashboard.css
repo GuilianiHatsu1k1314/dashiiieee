@@ -1,16 +1,19 @@
 .dashboard-wrapper {
-    display: flex;
-    height: 100vh;
+  display: flex;
+  height: 100vh;
 }
 
 .content {
   flex: 1;
   padding: 20px 30px;
   margin-left: 20px;
+  background-color: rgb(245, 254, 253);
+  overflow: hidden;
 }
 
 .card-container {
   display: flex;
+  justify-content: center;
   gap: 15px;
   margin-top: 20px;
   flex-wrap: wrap;
@@ -18,17 +21,19 @@
 
 .dashboard-card {
   flex: 1;
-  min-width: 150px;
-  max-width: 200px;
+  min-width: 300px;
   background: white;
   padding: 12px;
   border-radius: 8px;
   text-align: center;
-  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: transform 0.2s ease;
 }
 
+.dashboard-card > ul {
+  list-style: none;
+}
 .dashboard-card:hover {
   transform: translateY(-3px);
 }
@@ -67,10 +72,27 @@
 }
 
 .report-container {
-  padding-top: 1rem;
+  margin-top: 5rem;
+  margin-left: 5rem;
+}
+
+.user-list {
+  display: flex;
+  justify-self: center;
+  text-align: left;
+  width: 300px;
+  padding-left: 3rem;
+}
+
+.user-list  li{
+  list-style: none;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 .report-card {
+  padding: 2rem 0;
+  width: 90%;
   cursor: default;
   background-color: #f9f9f9;
   transition: 0.3s;
@@ -78,4 +100,30 @@
 
 .report-card:hover {
   transform: scale(1.02);
+}
+
+.default-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.main-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 30px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.main-card > ul {
+  list-style: none;
+}
+
+.user-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
