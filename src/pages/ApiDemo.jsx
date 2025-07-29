@@ -1,17 +1,10 @@
-<<<<<<< HEAD
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
-//Test
-=======
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import Button from "../components/Button";
 import "../assets/styles/button.css"; // Assuming you have a separate CSS file for ApiDemo
->>>>>>> 17b5a4471a023b71a2219a2db4dc03655994e5b2
+
 //ApiDemo.jsx
 function ApiDemo() {
   const location = useLocation();
