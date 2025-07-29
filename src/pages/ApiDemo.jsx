@@ -94,7 +94,7 @@ function ApiDemo() {
         >
           <div className="main-card">
             <h2 style={{ marginTop: 0, marginBottom: "20px" }}>
-              API Integration Demo (Axios)
+              📦 Dashiiieee Users
             </h2>
             {/*Changed the ui a bit, did a conditional rendering based on the mode(options in the sidebar) for crud.*/}
             {mode === "add" && (
