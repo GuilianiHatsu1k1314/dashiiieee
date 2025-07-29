@@ -127,3 +127,7 @@
   align-items: center;
   justify-content: space-between;
 }
+
+.username-highlight {
+  color: teal;
+}
