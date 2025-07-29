@@ -22,7 +22,6 @@
 .dashboard-card {
   flex: 1;
   min-width: 300px;
-
   background: white;
   padding: 12px;
   border-radius: 8px;
@@ -75,6 +74,20 @@
 .report-container {
   margin-top: 5rem;
   margin-left: 5rem;
+}
+
+.user-list {
+  display: flex;
+  justify-self: center;
+  text-align: left;
+  width: 300px;
+  padding-left: 3rem;
+}
+
+.user-list  li{
+  list-style: none;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 .report-card {

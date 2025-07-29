@@ -35,17 +35,19 @@ function ReportPage() {
       <div className="dashboard-card report-card">
         <div className="icon blue">👥</div>
         <h3>Total Users: {users.length}</h3>
-        <ul>
-          {users.length === 0 ? (
-            <p>No users available.</p>
-          ) : (
-            users.map((user) => (
-              <li key={user.id}>
-                {user.name} (ID: {user.id})
-              </li>
-            ))
-          )}
-        </ul>
+        <div className="user-list">
+          <ul>
+            {users.length === 0 ? (
+              <p>No users available.</p>
+            ) : (
+              users.map((user) => (
+                <li key={user.id}>
+                  <i className="fa-solid fa-circle-user"></i>&nbsp;{user.name} (ID: {user.id})
+                </li>
+              ))
+            )}
+          </ul>
+        </div>
       </div>
     </div>
   );
